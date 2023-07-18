@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductXamarin.MainPage"
+             xmlns:local="clr-namespace:ProductXamarin">
+
+    <ContentPage.BindingContext>
+        <local:ProductViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Proyecto de Aplicaciones Móviles" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Frame BackgroundColor="Black" Padding="24" CornerRadius="0">
+            <StackLayout>
+                <Label Text="Integrantes: Lima Roberth - Villalba Klever - Valencia Ulises" />
+                <Label Text="NOTA: Para eliminar un producto usar el botón rojo, y para editar un producto usar el botón azul" />
+            </StackLayout>
+        </Frame>
+        <Label Text="PRODUCTOS" FontSize="Title" Padding="30,10,30,10" HorizontalOptions="CenterAndExpand" />
+        <Button Text="Agregar un nuevo Producto" Clicked="OnAddProductClicked"/>
+        <Button Text="Agregar una nueva imagen" Clicked="Button_Clicked" />
+        <ScrollView>
+            <Grid Margin="30,10,30,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <!-- Add more row definitions if needed -->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <!-- Add more column definitions if needed -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Header row -->
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Categoria" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Precio" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="3" Text="Imagen" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="4" Text="Opciones" FontAttributes="Bold" />
+
+                <!-- Product data rows -->
+                <CollectionView ItemsSource="{Binding Products}" Grid.Row="1" Grid.ColumnSpan="5">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="5,10,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="{Binding name}" />
+                                <Label Grid.Column="1" Text="{Binding category}" />
+                                <Label Grid.Column="2" Text="{Binding price}" />
+                                <Image Grid.Column="3" Source="{Binding image.secure_url}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" />
+                                <StackLayout Grid.Column="4" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Button Clicked="OnDeleteClicked" BackgroundColor="Red" TextColor="White" WidthRequest="26" HeightRequest="26" />
+                                    <Button Clicked="OnEditClicked" BackgroundColor="Blue" TextColor="White" WidthRequest="26" HeightRequest="26" />
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>

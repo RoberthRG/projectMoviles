@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "1dTrcK/U7OFs0gvTQvSFEG9FIWr+3WW2OaJRlEEVl+zTXCc69PbY7P19pMpcuKDa+LDt7ztngAM4kuuvl72Azg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\xrobe\\Desktop\\ProductXamarin\\ProductXamarin.iOS\\ProductXamarin.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xrobe\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\xrobe\\.nuget\\packages\\rg.plugins.popup\\2.1.0\\rg.plugins.popup.2.1.0.nupkg.sha512",
+    "C:\\Users\\xrobe\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\xrobe\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\xrobe\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Degradación del paquete detectada: Xamarin.Essentials de 1.7.7 a 1.7.0. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n ProductXamarin.iOS -> ProductXamarin -> Xamarin.Essentials (>= 1.7.7) \r\n ProductXamarin.iOS -> Xamarin.Essentials (>= 1.7.0)",
+      "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-arm64",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
+}

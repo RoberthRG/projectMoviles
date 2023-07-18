@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductXamarin.NewProductPage">
+
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Label Text="New Product" FontSize="Large" HorizontalOptions="Center" Margin="0,0,0,20"/>
+
+        <Entry x:Name="nameEntry" Placeholder="Name" Margin="0,0,0,10"/>
+        <Entry x:Name="categoryEntry" Placeholder="Category" Margin="0,0,0,10"/>
+        <Entry x:Name="descriptionEntry" Placeholder="Description" Margin="0,0,0,10"/>
+        <Entry x:Name="priceEntry" Placeholder="Price" Margin="0,0,0,10" Keyboard="Numeric"/>
+        <Button Text="Select Image" Clicked="OnSelectImageClicked" Margin="0,0,0,20"/>
+        <Label x:Name="selectedImageLabel" Text="" FontSize="Small" HorizontalOptions="Center" Margin="0,0,0,20"/>
+        <Image x:Name="selectedImageView" Aspect="AspectFit" HeightRequest="200" Margin="0,0,0,20" />
+
+        <Button Text="Save" Clicked="OnSaveClicked"/>
+    </StackLayout>
+
+</ContentPage>
